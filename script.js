@@ -4,7 +4,21 @@ document.getElementById('surveyForm').addEventListener('submit', async function 
     // Собираем данные формы
     const formData = new FormData(e.target);
     const data = {};
-    formData.forEach((value, key) => (data[key] = value));
+    formData.forEach((value, key) => {
+        // Преобразуем значения в правильный формат
+        if (key === "cooperation") {
+            data[key] = value === "true";
+        } else if (!isNaN(value)) {
+            data[key] = parseFloat(value) || value;
+        } else {
+            data[key] = value;
+        }
+    });
+
+    // Устанавливаем параметры для необязательных полей
+    data["chronic_diseases"] = []; // Если пользователь добавит опцию
+    data["health_group"] = null; // Если применимо
+    data["skill_focus"] = []; // Массив навыков для улучшения
 
     try {
         // Отправляем данные на ваш сервис
@@ -22,10 +36,11 @@ document.getElementById('surveyForm').addEventListener('submit', async function 
 
         const result = await response.json();
 
-        // Отображаем рекомендацию
+        // Отображаем результат
         document.getElementById('recommendation').innerHTML =
-            <h2>Your Recommendation:</h2>
-            <p>${result.recommendation}</p>
+            <h2>Recommendation:</h2>
+            <p>Cohort: ${result.cohort}</p>
+            <p>Facilities: ${result.recommended_facilities.join(', ')}</p>
         ;
     } catch (error) {
         console.error(error);

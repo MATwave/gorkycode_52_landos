@@ -3,29 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommendation Survey</title>
+    <title>Training Recommendation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Find Your Best Training Recommendation</h1>
+        <h1>Find Your Training Recommendation</h1>
         <form id="surveyForm">
-            <label for="fitnessLevel">Fitness Level:</label>
-            <select id="fitnessLevel" name="fitness_level">
+            <label for="fitness_level">Fitness Level:</label>
+            <select id="fitness_level" name="fitness_level">
                 <option value="1">Beginner</option>
                 <option value="2">Intermediate</option>
                 <option value="3">Advanced</option>
             </select>
 
-            <label for="ageCategory">Age Category:</label>
-            <select id="ageCategory" name="age_category">
+            <label for="age_category">Age Category:</label>
+            <select id="age_category" name="age_category">
                 <option value="1">Child</option>
                 <option value="2">Youth</option>
                 <option value="3">Adult</option>
                 <option value="4">Senior</option>
             </select>
 
-            <!-- Add more questions as needed -->
+            <label for="training_type">Training Type:</label>
+            <select id="training_type" name="training_type">
+                <option value="1">Strength</option>
+                <option value="2">Cardio</option>
+                <option value="3">Group</option>
+                <option value="4">Individual</option>
+            </select>
+
+            <label for="training_goal">Training Goal:</label>
+            <select id="training_goal" name="training_goal">
+                <option value="1">Health Improvement</option>
+                <option value="2">Weight Loss</option>
+                <option value="3">Endurance</option>
+                <option value="4">Achievements</option>
+            </select>
+
+            <label for="sports_facility">Sports Facility:</label>
+            <input id="sports_facility" name="sports_facility" type="text" placeholder="e.g., Fitness Center">
+
+            <label for="group_or_individual">Group or Individual:</label>
+            <select id="group_or_individual" name="group_or_individual">
+                <option value="1">Group</option>
+                <option value="2">Individual</option>
+            </select>
+
+            <label for="health_status">Health Status:</label>
+            <select id="health_status" name="health_status">
+                <option value="1">No Restrictions</option>
+                <option value="2">Chronic Diseases</option>
+                <option value="3">Load Correction</option>
+            </select>
+
+            <label for="training_frequency">Training Frequency (per week):</label>
+            <input id="training_frequency" name="training_frequency" type="number" min="1" max="7" value="3">
+
+            <label for="training_time">Training Time:</label>
+            <select id="training_time" name="training_time">
+                <option value="1">Morning</option>
+                <option value="2">Day</option>
+                <option value="3">Evening</option>
+            </select>
+
+            <label for="weight">Weight (kg):</label>
+            <input id="weight" name="weight" type="number" step="0.1" placeholder="e.g., 70.0">
+
+            <label for="height">Height (cm):</label>
+            <input id="height" name="height" type="number" step="0.1" placeholder="e.g., 170.0">
+
+            <label for="cooperation">Willing to Cooperate:</label>
+            <select id="cooperation" name="cooperation">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="budget">Budget:</label>
+            <input id="budget" name="budget" type="number" step="0.1" placeholder="Optional">
 
             <button type="submit">Get Recommendation</button>
         </form>
