@@ -19,7 +19,7 @@ document.getElementById('surveyForm').addEventListener('submit', async function 
     data["skill_focus"] = [];
 
     try {
-        const response = await fetch('http://217.114.43.57:8000/recommendations', {
+        const response = await fetch('https://gorkycode-team-52.ru/recommendations', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
