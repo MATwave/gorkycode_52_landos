@@ -10,8 +10,14 @@ document.getElementById('surveyForm').addEventListener('submit', async function 
         } else if (!isNaN(value) && value !== "") {
             data[key] = parseFloat(value) || value;
         } else {
-            // Если значение пустое или не число, оставляем значение как строку (или предоставляем дефолтное значение)
-            data[key] = value || null;
+            // Обработка пустых значений
+            if (key === "sports_facility") {
+                data[key] = value || ""; // Если пусто, отправляем пустую строку
+            } else if (key === "weight" || key === "height") {
+                data[key] = value ? parseFloat(value) : 0; // Если пусто, отправляем 0 для числовых значений
+            } else {
+                data[key] = value || null; // Для других значений отправляем null
+            }
         }
     });
 
