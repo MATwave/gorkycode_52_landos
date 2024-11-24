@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your Best Training Recommendation</h1>
+        <form id="surveyForm">
+            <label for="fitnessLevel">Fitness Level:</label>
+            <select id="fitnessLevel" name="fitness_level">
+                <option value="1">Beginner</option>
+                <option value="2">Intermediate</option>
+                <option value="3">Advanced</option>
+            </select>
+
+            <label for="ageCategory">Age Category:</label>
+            <select id="ageCategory" name="age_category">
+                <option value="1">Child</option>
+                <option value="2">Youth</option>
+                <option value="3">Adult</option>
+                <option value="4">Senior</option>
+            </select>
+
+            <!-- Add more questions as needed -->
+
+            <button type="submit">Get Recommendation</button>
+        </form>
+        <div id="recommendation"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
