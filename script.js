@@ -42,7 +42,7 @@ document.getElementById('surveyForm').addEventListener('submit', async function 
         // Обновляем блок рекомендаций
         const recommendationContent = document.getElementById('recommendationContent');
         recommendationContent.innerHTML =
-            '<p>Когорта: <strong>${result.cohort}</strong></p><br><p>Рекомендуемые площадки: <strong>${result.recommended_facilities.join(', ')}</strong></p>'
+            `<p>Когорта: <strong>${result.cohort}</strong></p><br><p>Рекомендуемые площадки: <strong>${result.recommended_facilities.join(', ')}</strong></p>`
         ;
     } catch (error) {
         console.error(error);
