@@ -1,90 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training Recommendation</title>
+    <title>Рекомендация по тренировкам</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Find Your Training Recommendation</h1>
-        <form id="surveyForm">
-            <label for="fitness_level">Fitness Level:</label>
-            <select id="fitness_level" name="fitness_level">
-                <option value="1">Beginner</option>
-                <option value="2">Intermediate</option>
-                <option value="3">Advanced</option>
-            </select>
+        <h1>Подберите свою тренировку</h1>
+        <div class="content">
+            <form id="surveyForm" class="form">
+                <label for="fitness_level">Уровень физической подготовки:</label>
+                <select id="fitness_level" name="fitness_level">
+                    <option value="1">Начинающий</option>
+                    <option value="2">Средний</option>
+                    <option value="3">Продвинутый</option>
+                </select>
 
-            <label for="age_category">Age Category:</label>
-            <select id="age_category" name="age_category">
-                <option value="1">Child</option>
-                <option value="2">Youth</option>
-                <option value="3">Adult</option>
-                <option value="4">Senior</option>
-            </select>
+                <label for="age_category">Возрастная категория:</label>
+                <select id="age_category" name="age_category">
+                    <option value="1">Детская</option>
+                    <option value="2">Юношеская</option>
+                    <option value="3">Взрослая</option>
+                    <option value="4">Пожилая</option>
+                </select>
 
-            <label for="training_type">Training Type:</label>
-            <select id="training_type" name="training_type">
-                <option value="1">Strength</option>
-                <option value="2">Cardio</option>
-                <option value="3">Group</option>
-                <option value="4">Individual</option>
-            </select>
+                <label for="training_type">Тип тренировок:</label>
+                <select id="training_type" name="training_type">
+                    <option value="1">Силовые</option>
+                    <option value="2">Кардио</option>
+                    <option value="3">Групповые</option>
+                    <option value="4">Индивидуальные</option>
+                </select>
 
-            <label for="training_goal">Training Goal:</label>
-            <select id="training_goal" name="training_goal">
-                <option value="1">Health Improvement</option>
-                <option value="2">Weight Loss</option>
-                <option value="3">Endurance</option>
-                <option value="4">Achievements</option>
-            </select>
+                <label for="training_goal">Цель тренировок:</label>
+                <select id="training_goal" name="training_goal">
+                    <option value="1">Улучшение здоровья</option>
+                    <option value="2">Снижение веса</option>
+                    <option value="3">Повышение выносливости</option>
+                    <option value="4">Спортивные достижения</option>
+                </select>
 
-            <label for="sports_facility">Sports Facility:</label>
-            <input id="sports_facility" name="sports_facility" type="text" placeholder="e.g., Fitness Center">
+                <label for="sports_facility">Тип спортивной площадки:</label>
+                <input id="sports_facility" name="sports_facility" type="text" placeholder="Например, фитнес-центр">
 
-            <label for="group_or_individual">Group or Individual:</label>
-            <select id="group_or_individual" name="group_or_individual">
-                <option value="1">Group</option>
-                <option value="2">Individual</option>
-            </select>
+                <label for="group_or_individual">Формат занятий:</label>
+                <select id="group_or_individual" name="group_or_individual">
+                    <option value="1">Групповые</option>
+                    <option value="2">Индивидуальные</option>
+                </select>
 
-            <label for="health_status">Health Status:</label>
-            <select id="health_status" name="health_status">
-                <option value="1">No Restrictions</option>
-                <option value="2">Chronic Diseases</option>
-                <option value="3">Load Correction</option>
-            </select>
+                <label for="health_status">Состояние здоровья:</label>
+                <select id="health_status" name="health_status">
+                    <option value="1">Без ограничений</option>
+                    <option value="2">Хронические заболевания</option>
+                    <option value="3">Необходимость коррекции нагрузок</option>
+                </select>
 
-            <label for="training_frequency">Training Frequency (per week):</label>
-            <input id="training_frequency" name="training_frequency" type="number" min="1" max="7" value="3">
+                <label for="training_frequency">Частота тренировок (раз в неделю):</label>
+                <input id="training_frequency" name="training_frequency" type="number" min="1" max="7" value="3">
 
-            <label for="training_time">Training Time:</label>
-            <select id="training_time" name="training_time">
-                <option value="1">Morning</option>
-                <option value="2">Day</option>
-                <option value="3">Evening</option>
-            </select>
+                <label for="training_time">Время тренировок:</label>
+                <select id="training_time" name="training_time">
+                    <option value="1">Утро</option>
+                    <option value="2">День</option>
+                    <option value="3">Вечер</option>
+                </select>
 
-            <label for="weight">Weight (kg):</label>
-            <input id="weight" name="weight" type="number" step="0.1" placeholder="e.g., 70.0">
+                <label for="weight">Вес (кг):</label>
+                <input id="weight" name="weight" type="number" step="0.1" placeholder="Например, 70.0">
 
-            <label for="height">Height (cm):</label>
-            <input id="height" name="height" type="number" step="0.1" placeholder="e.g., 170.0">
+                <label for="height">Рост (см):</label>
+                <input id="height" name="height" type="number" step="0.1" placeholder="Например, 170.0">
 
-            <label for="cooperation">Willing to Cooperate:</label>
-            <select id="cooperation" name="cooperation">
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+                <label for="cooperation">Готовность к сотрудничеству:</label>
+                <select id="cooperation" name="cooperation">
+                    <option value="true">Да</option>
+                    <option value="false">Нет</option>
+                </select>
+              <label for="budget">Бюджет:</label>
+                <input id="budget" name="budget" type="number" step="0.1" placeholder="Укажите сумму (по желанию)">
 
-            <label for="budget">Budget:</label>
-            <input id="budget" name="budget" type="number" step="0.1" placeholder="Optional">
-
-            <button type="submit">Get Recommendation</button>
-        </form>
-        <div id="recommendation"></div>
+                <button type="submit">Получить рекомендацию</button>
+            </form>
+            <div id="recommendation" class="recommendation">
+                <h2>Рекомендация:</h2>
+                <div id="recommendationContent"></div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
