@@ -7,13 +7,15 @@ document.getElementById('surveyForm').addEventListener('submit', async function 
     formData.forEach((value, key) => {
         if (key === "cooperation") {
             data[key] = value === "true";
-        } else if (!isNaN(value)) {
+        } else if (!isNaN(value) && value !== "") {
             data[key] = parseFloat(value) || value;
         } else {
-            data[key] = value;
+            // Если значение пустое или не число, оставляем значение как строку (или предоставляем дефолтное значение)
+            data[key] = value || null;
         }
     });
 
+    // Обработка дополнительных данных
     data["chronic_diseases"] = [];
     data["health_group"] = null;
     data["skill_focus"] = [];
